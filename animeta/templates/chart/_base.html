@@ -1,0 +1,53 @@
+{% extends '_base.html' %}
+
+{% macro range_i18n(range) %}
+{%- if range == 'overall' %}전체
+{%- elif range == 'monthly' %}월간
+{%- elif range == 'weekly' %}주간
+{%- endif -%}
+{% endmacro %}
+
+{% macro render_chart(range, date_range, chart, title) %}
+<h2>{{ range_i18n(range) }} {{ title }}</h2>
+
+{% if range != 'overall' %}
+<p>기간: {{ date_range[0] }} - {{ date_range[1] }}</p>
+{% endif %}
+
+<table class="chart">
+{% for item in chart %}
+    <tr>
+        <td class="rank">{{ item.rank }}</td>
+        <td class="diff">
+        {% if item.diff %}
+            {% if item.diff < 0 %}
+                {{ item.diff }}<span class="down">&darr;</span>
+            {% elif item.diff > 0 %}
+                {{ item.diff }}<span class="up">&uarr;</span>
+            {% endif %}
+        {% endif %}
+        </td>
+        <td class="name">{{ item.obj }}</td>
+        <td class="bar"><div style="width: {{ item.score_percent }}%"></div></td>
+        <td class="score">{{ item.score }}</td>
+    </tr>
+{% endfor %}
+</table>
+{% endmacro %}
+
+{% block content %}
+{{ super() }}
+<h1>순위</h1>
+<p>
+    인기 작품:
+    <a href="{{ url_for('chart.work', range='overall') }}">전체</a>,
+    <a href="{{ url_for('chart.work', range='weekly') }}">주간</a>,
+    <a href="{{ url_for('chart.work', range='monthly') }}">월간</a>
+</p>
+<p>
+    활발한 사용자:
+    <a href="{{ url_for('chart.user', range='overall') }}">전체</a>,
+    <a href="{{ url_for('chart.user', range='weekly') }}">주간</a>,
+    <a href="{{ url_for('chart.user', range='monthly') }}">월간</a>
+</p>
+{% endblock %}

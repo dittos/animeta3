@@ -1,0 +1,6 @@
+{% extends 'chart/_base.html' %}
+
+{% block content %}
+{{ super() }}
+{{ render_chart(range, date_range, chart, '인기 작품') }}
+{% endblock %}

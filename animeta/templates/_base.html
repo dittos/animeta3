@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}애니메타{% endblock %}</title>
+    <link rel="stylesheet" href="{{ 'css/build.css'|static }}" type="text/css">
+    {% block head %}{% endblock %}
+</head>
+<body>
+{% block content %}
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+</body>
+</html>
