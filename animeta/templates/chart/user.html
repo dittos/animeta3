@@ -1,6 +1,5 @@
 {% extends 'chart/_base.html' %}
 
-{% block content %}
-{{ super() }}
+{% block content_chart %}
 {{ render_chart(range, date_range, chart, '활발한 사용자') }}
 {% endblock %}

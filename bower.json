@@ -1,0 +1,13 @@
+{
+  "name": "animeta",
+  "version": "1.99.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "normalize-css": "~2.1.3",
+    "semantic-grid": "latest"
+  }
+}

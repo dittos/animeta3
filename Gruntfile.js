@@ -3,11 +3,17 @@ module.exports = function(grunt) {
         less: {
             development: {
                 options: {
-                    paths: ['animeta/static/css'],
+                    paths: [
+                        'animeta/static/css',
+                        'components/semantic-grid/stylesheets/less'
+                    ],
                     yuicompress: true
                 },
                 files: {
-                    'animeta/static/css/build.css': 'animeta/static/css/*.less'
+                    'animeta/static/css/build.css': [
+                        'components/normalize-css/normalize.css',
+                        'animeta/static/css/*.less'
+                    ]
                 }
             }
         },

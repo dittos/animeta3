@@ -7,7 +7,7 @@ animeta
 
 * Python 3.3 이상
 * libpq
-* Node.js, Grunt (`npm install -g grunt-cli`)
+* Node.js, Grunt, Bower (`npm install -g grunt-cli bower`)
 
 ### 준비: virtualenv
 
@@ -25,5 +25,6 @@ animeta
 
 ### Asset Build
 
+    bower install
     npm install
     grunt
