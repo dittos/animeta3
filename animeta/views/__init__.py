@@ -27,5 +27,5 @@ def init_app(app):
         work_chart = apis.chart.get_work_chart(apis.chart.get_date_range('weekly'), limit=10)
         return flask.render_template('index.html',
             work_chart=work_chart,
-            timeline=apis.post.get_recent_posts().limit(6),
+            timeline=apis.post.get_recent_posts(filter_noise=True).limit(6),
         )

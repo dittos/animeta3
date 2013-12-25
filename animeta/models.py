@@ -39,6 +39,12 @@ class StatusType(db.TypeDecorator):
     SUSPENDED = 'suspended'
     INTERESTED = 'interested'
     table = (FINISHED, WATCHING, SUSPENDED, INTERESTED)
+    TEXTS = {
+        FINISHED: '완료',
+        WATCHING: '보는 중',
+        SUSPENDED: '중단',
+        INTERESTED: '볼 예정',
+    }
 
     def process_bind_param(self, value, dialect):
         if value == self.NONE:
@@ -75,7 +81,7 @@ class History(db.Model):
             if progress.endswith(tuple('0123456789')):
                 progress += '화'
         else:
-            progress = self.status_type
+            progress = StatusType.TEXTS[self.status_type]
         return progress
 
 class Record(db.Model):
