@@ -68,6 +68,16 @@ class History(db.Model):
         self.updated_at = datetime.datetime.now(pytz.utc)
         super(Update, self).__init__(**kwargs)
 
+    @property
+    def progress(self):
+        progress = (self.status or '').strip()
+        if progress:
+            if progress.endswith(tuple('0123456789')):
+                progress += '화'
+        else:
+            progress = self.status_type
+        return progress
+
 class Record(db.Model):
     __tablename__ = 'record_record'
     __table_args__ = (db.UniqueConstraint('user_id', 'work_id'), )

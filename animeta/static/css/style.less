@@ -63,6 +63,86 @@ a {
     }
 }
 
+.page-home {
+    padding-top: 16px;
+
+    .popular-works {
+        .column(6);
+        .chart-item {
+            margin-top: 16px;
+        }
+    }
+    .timeline {
+        .column(6);
+        .timeline-post {
+            margin-top: 16px;
+        }
+    }
+
+    .section-title {
+        color: #999;
+        letter-spacing: 6px;
+        font-weight: normal;
+        font-size: 15px;
+        margin: 0;
+    }
+}
+
+.chart-item {
+    clear: both;
+    overflow: hidden;
+
+    .rank {
+        font-size: 20px;
+        font-weight: bold;
+        float: left;
+        color: #999;
+        margin-right: 10px;
+    }
+    .object {
+        float: left;
+    }
+    .title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .score {
+        padding-top: 4px;
+        color: #666;
+    }
+    .up { color: red; }
+    .down { color: blue; }
+}
+
+.timeline-post {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 #eee;
+    padding: 8px;
+
+    .author {
+        color: @color_main;
+        font-weight: bold;
+        padding-bottom: 2px;
+    }
+    .time {
+        color: #999;
+        font-weight: normal;
+        font-size: 12px;
+        padding-top: 2px;
+        float: right;
+    }
+    .title {
+        font-weight: bold;
+    }
+    .body {
+        margin: 0;
+        padding-top: 10px;
+        color: #444;
+        background: #fff;
+    }
+}
+
 .page-chart {
     .column(12);
 }

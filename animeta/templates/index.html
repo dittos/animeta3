@@ -1,0 +1,40 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<div class="page-home">
+    <div class="popular-works">
+        <h2 class="section-title">주간 작품 순위</h2>
+        {% for item in work_chart %}
+        <div class="chart-item">
+            <div class="rank">{{ item.rank }}</div>
+            <div class="object">
+                <div class="title">{{ item.obj }}</div>
+                <div class="score">
+                    기록 {{ item.score }}건
+                    {% if item.diff %}&middot; 전 주보다 {{ item.diff|abs }}위 {% if item.diff < 0 %}<span class="down">&darr;</span>{% else %}<span class="up">&uarr;</span>{% endif %}{% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="timeline">
+        <h2 class="section-title">최근 감상평</h2>
+        {% for post in timeline %}
+        <div class="timeline-post">
+            <div class="author">
+                {{ post.user }}
+                <span class="time" title="{{ post.updated_at }}">{{ post.updated_at|timesince }} 전</span>
+            </div>
+            <div class="topic">
+                <span class="title">{{ post.work.title }}</span>
+                <span class="progress">{{ post.progress }}</span>
+            </div>
+            <p class="body">
+                {{ post.comment }}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

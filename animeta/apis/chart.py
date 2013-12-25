@@ -72,7 +72,7 @@ def compare(cur, prev):
             item.diff = prev_ranks[item.obj] - item.rank
         yield item
 
-def _get_chart(model, group_field, score_field, date_range):
+def _get_chart(model, group_field, score_field, date_range, limit=None):
     start_date, end_date = date_range
     # TODO: timezone?
     stats = (db.session.query(group_field.label('group'), score_field.label('score'))
@@ -84,10 +84,12 @@ def _get_chart(model, group_field, score_field, date_range):
                    .join(stats, model.id == stats.c.group)
                    .filter(stats.c.score > 1)
                    .order_by(stats.c.score.desc()))
+    if limit:
+        q = q.limit(limit)
     return ranked(q)
 
-def get_chart(model, group_field, score_field, date_range):
-    result = _get_chart(model, group_field, score_field, date_range)
+def get_chart(model, group_field, score_field, date_range, **kwargs):
+    result = _get_chart(model, group_field, score_field, date_range, **kwargs)
     if date_range != OVERALL_RANGE:
         s, e = date_range
         delta = e - s
@@ -98,18 +100,20 @@ def get_chart(model, group_field, score_field, date_range):
         result = compare(result, prev_chart)
     return result
 
-def get_work_chart(date_range):
+def get_work_chart(date_range, **kwargs):
     return get_chart(
         models.Work,
         models.History.work_id,
         db.func.count(models.History.user_id.distinct()),
-        date_range
+        date_range,
+        **kwargs
     )
 
-def get_user_chart(date_range):
+def get_user_chart(date_range, **kwargs):
     return get_chart(
         models.User,
         models.History.user_id,
         db.func.count(),
-        date_range
+        date_range,
+        **kwargs
     )

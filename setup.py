@@ -14,5 +14,6 @@ setup(
         'SQLAlchemy>=0.8.4',
         'psycopg2>=2.5.1',
         'pytz>=2013.8',
+        'Babel==1.3',
     ],
 )

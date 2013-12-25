@@ -409,6 +409,89 @@ a {
   color: #666;
   border-bottom: 1px solid #ccc;
 }
+.page-home {
+  padding-top: 16px;
+}
+.page-home .popular-works {
+  display: inline;
+  float: left;
+  width: 460px;
+  margin: 0 10px;
+}
+.page-home .popular-works .chart-item {
+  margin-top: 16px;
+}
+.page-home .timeline {
+  display: inline;
+  float: left;
+  width: 460px;
+  margin: 0 10px;
+}
+.page-home .timeline .timeline-post {
+  margin-top: 16px;
+}
+.page-home .section-title {
+  color: #999;
+  letter-spacing: 6px;
+  font-weight: normal;
+  font-size: 15px;
+  margin: 0;
+}
+.chart-item {
+  clear: both;
+  overflow: hidden;
+}
+.chart-item .rank {
+  font-size: 20px;
+  font-weight: bold;
+  float: left;
+  color: #999;
+  margin-right: 10px;
+}
+.chart-item .object {
+  float: left;
+}
+.chart-item .title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.chart-item .score {
+  padding-top: 4px;
+  color: #666;
+}
+.chart-item .up {
+  color: red;
+}
+.chart-item .down {
+  color: blue;
+}
+.timeline-post {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 #eee;
+  padding: 8px;
+}
+.timeline-post .author {
+  color: #4bb000;
+  font-weight: bold;
+  padding-bottom: 2px;
+}
+.timeline-post .time {
+  color: #999;
+  font-weight: normal;
+  font-size: 12px;
+  padding-top: 2px;
+  float: right;
+}
+.timeline-post .title {
+  font-weight: bold;
+}
+.timeline-post .body {
+  margin: 0;
+  padding-top: 10px;
+  color: #444;
+  background: #fff;
+}
 .page-chart {
   display: inline;
   float: left;
