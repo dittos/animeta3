@@ -1,0 +1,100 @@
+@import "normalize.css";
+
+@color_main: #4bb000;
+
+a {
+    color: @color_main;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+    clear: both;
+}
+
+.header {
+    border-bottom: 1px solid @color_main;
+}
+
+.header-inner {
+    .container;
+    padding: 16px 0;
+}
+
+.content {
+    .container;
+    font-size: 14px;
+
+    .nav {
+        padding: 16px 0;
+        overflow: hidden;
+        line-height: 24px;
+        h1 {
+            font-size: 24px;
+            float: left;
+            margin: 0;
+        }
+        p {
+            font-size: 14px;
+            float: left;
+            margin: 0 0 0 20px;
+        }
+    }
+
+    h2 {
+        clear: both;
+        font-size: 20px;
+        font-weight: normal;
+    }
+}
+
+.footer {
+    .container;
+    padding: 32px 0;
+    font-size: 13px;
+    color: #666;
+
+    a {
+        text-decoration: none;
+        color: #666;
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+.chart {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 1px solid #ccc;
+
+    td {
+        border-bottom: 1px solid #ccc;
+        padding: 8px 8px 8px 0;
+    }
+
+    .rank {
+        font-weight: bold;
+        color: #666;
+    }
+    .diff {
+        color: #777;
+        font-size: 12px;
+        .up {
+            color: blue;
+        }
+        .down {
+            color: red;
+        }
+    }
+    .bar {
+        min-width: 300px;
+
+        div {
+            background-color: #999;
+            height: 8px;
+        }
+    }
+    .score {
+        color: #777;
+        font-size: 12px;
+    }
+}

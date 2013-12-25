@@ -37,17 +37,19 @@
 
 {% block content %}
 {{ super() }}
+<div class="nav">
 <h1>순위</h1>
 <p>
     인기 작품:
     <a href="{{ url_for('chart.work', range='overall') }}">전체</a>,
-    <a href="{{ url_for('chart.work', range='weekly') }}">주간</a>,
-    <a href="{{ url_for('chart.work', range='monthly') }}">월간</a>
+    <a href="{{ url_for('chart.work', range='monthly') }}">월간</a>,
+    <a href="{{ url_for('chart.work', range='weekly') }}">주간</a>
 </p>
 <p>
     활발한 사용자:
     <a href="{{ url_for('chart.user', range='overall') }}">전체</a>,
-    <a href="{{ url_for('chart.user', range='weekly') }}">주간</a>,
-    <a href="{{ url_for('chart.user', range='monthly') }}">월간</a>
+    <a href="{{ url_for('chart.user', range='monthly') }}">월간</a>,
+    <a href="{{ url_for('chart.user', range='weekly') }}">주간</a>
 </p>
+</div>
 {% endblock %}

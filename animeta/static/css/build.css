@@ -1,0 +1,91 @@
+@import "normalize.css";
+a {
+  color: #4bb000;
+}
+.container {
+  width: 960px;
+  margin: 0 auto;
+  clear: both;
+}
+.header {
+  border-bottom: 1px solid #4bb000;
+}
+.header-inner {
+  width: 960px;
+  margin: 0 auto;
+  clear: both;
+  padding: 16px 0;
+}
+.content {
+  width: 960px;
+  margin: 0 auto;
+  clear: both;
+  font-size: 14px;
+}
+.content .nav {
+  padding: 16px 0;
+  overflow: hidden;
+  line-height: 24px;
+}
+.content .nav h1 {
+  font-size: 24px;
+  float: left;
+  margin: 0;
+}
+.content .nav p {
+  font-size: 14px;
+  float: left;
+  margin: 0 0 0 20px;
+}
+.content h2 {
+  clear: both;
+  font-size: 20px;
+  font-weight: normal;
+}
+.footer {
+  width: 960px;
+  margin: 0 auto;
+  clear: both;
+  padding: 32px 0;
+  font-size: 13px;
+  color: #666;
+}
+.footer a {
+  text-decoration: none;
+  color: #666;
+  border-bottom: 1px solid #ccc;
+}
+.chart {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid #ccc;
+}
+.chart td {
+  border-bottom: 1px solid #ccc;
+  padding: 8px 8px 8px 0;
+}
+.chart .rank {
+  font-weight: bold;
+  color: #666;
+}
+.chart .diff {
+  color: #777;
+  font-size: 12px;
+}
+.chart .diff .up {
+  color: blue;
+}
+.chart .diff .down {
+  color: red;
+}
+.chart .bar {
+  min-width: 300px;
+}
+.chart .bar div {
+  background-color: #999;
+  height: 8px;
+}
+.chart .score {
+  color: #777;
+  font-size: 12px;
+}
