@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+
+{% from '_macros.html' import render_post %}
+
+{% block content %}
+<div class="page-work">
+    <h1 class="work-title">{{ work.title }}</h1>
+
+    <div class="recent-posts">
+    {% for post in posts %}
+        {{ render_post(post) }}
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

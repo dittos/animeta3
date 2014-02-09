@@ -1,5 +1,7 @@
 {% extends '_base.html' %}
 
+{% from '_macros.html' import render_post %}
+
 {% block content %}
 <div class="page-home">
     <div class="popular-works">
@@ -21,19 +23,7 @@
     <div class="timeline">
         <h2 class="section-title">최근 감상평</h2>
         {% for post in timeline %}
-        <div class="timeline-post">
-            <div class="author">
-                {{ post.user }}
-                <span class="time" title="{{ post.updated_at }}">{{ post.updated_at|timesince }} 전</span>
-            </div>
-            <div class="topic">
-                <span class="title">{{ post.work.title }}</span>
-                <span class="progress">{{ post.progress }}</span>
-            </div>
-            <p class="body">
-                {{ post.comment }}
-            </p>
-        </div>
+            {{ render_post(post) }}
         {% endfor %}
     </div>
 </div>
