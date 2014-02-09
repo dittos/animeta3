@@ -5,10 +5,12 @@ def _base_query():
     return (History.query.filter(History.comment != '')
                 .order_by(History.id.desc()))
 
-def get_recent_posts(work=None, filter_noise=False):
+def get_recent_posts(work=None, filter_noise=False, episode=None):
     q = _base_query()
     if work:
         q = q.filter_by(work=work)
+    if episode is not None:
+        q = q.filter_by(status=str(episode))
     if filter_noise:
         # 두 명 이상이 기록한 작품만 포함
         stats = (db.session.query(Record.work_id, db.func.count().label('score'))

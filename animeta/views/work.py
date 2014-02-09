@@ -13,4 +13,15 @@ def detail(title):
     return flask.render_template('work/detail.html',
         work=work,
         posts=apis.post.get_recent_posts(work).limit(6),
+        episodes=apis.work.get_episodes(work),
+    )
+
+@bp.route('/<title>/ep/<int:ep>/')
+def episode(title, ep):
+    work = apis.work.get_work(title)
+    return flask.render_template('work/episode.html',
+        work=work,
+        posts=apis.post.get_recent_posts(work, episode=ep),
+        episodes=apis.work.get_episodes(work),
+        current_episode=ep,
     )

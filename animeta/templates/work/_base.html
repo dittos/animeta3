@@ -1,0 +1,10 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<div class="page-work">
+    <h1 class="work-title">{{ work.title }}</h1>
+
+    {% block work_content %}
+    {% endblock %}
+</div>
+{% endblock %}

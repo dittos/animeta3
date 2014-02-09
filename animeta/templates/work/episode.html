@@ -4,13 +4,13 @@
 
 {% block work_content %}
 <div class="episodes">
-    <span class="active">최신</span>
+    <a href="{{ work|work_url }}">최신</a>
 {% for episode in episodes %}
-    &middot; <a href="{{ work|work_url('episode', ep=episode) }}">{{ episode }}화</a>
+    &middot; <a href="{{ work|work_url('episode', ep=episode) }}"{% if current_episode == episode %} class="active"{% endif %}>{{ episode }}화</a>
 {% endfor %}
 </div>
 
-<div class="recent-posts">
+<div class="posts">
 {% for post in posts %}
     {{ render_post(post) }}
 {% endfor %}
