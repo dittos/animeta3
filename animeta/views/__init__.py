@@ -4,9 +4,10 @@ from babel.dates import format_timedelta
 from animeta import db, models, apis
 
 def init_app(app):
-    from animeta.views import chart, work
+    from animeta.views import chart, work, user
     app.register_blueprint(chart.bp, url_prefix='/charts')
     app.register_blueprint(work.bp, url_prefix='/works')
+    app.register_blueprint(user.bp, url_prefix='/users')
 
     # The trailing parenthesises make the filter name
     # same with the function name (`static`).
@@ -27,6 +28,8 @@ def init_app(app):
     def object_url(obj, **kwargs):
         if isinstance(obj, models.Work):
             fn = work.work_url
+        elif isinstance(obj, models.User):
+            fn = user.user_url
         return fn(obj, **kwargs)
 
     @app.route('/')

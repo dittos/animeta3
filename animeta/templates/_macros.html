@@ -1,7 +1,7 @@
 {% macro render_post(post) %}
 <div class="timeline-post">
     <div class="author">
-        {{ post.user }}
+        <a href="{{ post.user|user_url }}">{{ post.user }}</a>
         <span class="time" title="{{ post.updated_at }}">{{ post.updated_at|timesince }} 전</span>
     </div>
     <div class="topic">
