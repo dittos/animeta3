@@ -437,6 +437,14 @@ a {
   font-size: 15px;
   margin: 0;
 }
+.link-stealth a {
+  color: #000;
+  text-decoration: none;
+}
+.link-stealth a:hover {
+  color: #4bb000;
+  border-bottom: 1px dashed #aaa;
+}
 .chart-item {
   clear: both;
   overflow: hidden;
@@ -450,6 +458,14 @@ a {
 }
 .chart-item .object {
   float: left;
+}
+.chart-item .object a {
+  color: #000;
+  text-decoration: none;
+}
+.chart-item .object a:hover {
+  color: #4bb000;
+  border-bottom: 1px dashed #aaa;
 }
 .chart-item .title {
   font-size: 16px;
@@ -486,6 +502,14 @@ a {
 .timeline-post .title {
   font-weight: bold;
 }
+.timeline-post .title a {
+  color: #000;
+  text-decoration: none;
+}
+.timeline-post .title a:hover {
+  color: #4bb000;
+  border-bottom: 1px dashed #aaa;
+}
 .timeline-post .body {
   margin: 0;
   padding-top: 10px;
@@ -520,6 +544,14 @@ a {
 }
 .chart .diff .down {
   color: red;
+}
+.chart .name a {
+  color: #000;
+  text-decoration: none;
+}
+.chart .name a:hover {
+  color: #4bb000;
+  border-bottom: 1px dashed #aaa;
 }
 .chart .bar {
   min-width: 300px;

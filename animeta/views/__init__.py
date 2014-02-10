@@ -23,6 +23,12 @@ def init_app(app):
         delta = datetime.datetime.now(datetime.timezone.utc) - dt
         return format_timedelta(delta, locale='ko')
 
+    @app.template_filter()
+    def object_url(obj, **kwargs):
+        if isinstance(obj, models.Work):
+            fn = work.work_url
+        return fn(obj, **kwargs)
+
     @app.route('/')
     def index():
         work_chart = apis.chart.get_work_chart(apis.chart.get_date_range('weekly'), limit=10)

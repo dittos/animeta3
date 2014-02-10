@@ -27,7 +27,7 @@
             {% endif %}
         {% endif %}
         </td>
-        <td class="name">{{ item.obj }}</td>
+        <td class="name"><a href="{{ item.obj|object_url }}">{{ item.obj }}</a></td>
         <td class="bar"><div style="width: {{ item.score_percent }}%"></div></td>
         <td class="score">{{ item.score }}</td>
     </tr>

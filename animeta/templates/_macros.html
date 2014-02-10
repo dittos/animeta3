@@ -5,7 +5,7 @@
         <span class="time" title="{{ post.updated_at }}">{{ post.updated_at|timesince }} 전</span>
     </div>
     <div class="topic">
-        <span class="title">{{ post.work.title }}</span>
+        <span class="title"><a href="{{ post.work|work_url }}">{{ post.work.title }}</a></span>
         <span class="progress">{{ post.progress }}</span>
     </div>
     <p class="body">

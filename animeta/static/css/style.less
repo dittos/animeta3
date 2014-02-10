@@ -88,6 +88,17 @@ a {
     }
 }
 
+.link-stealth {
+    a {
+        color: #000;
+        text-decoration: none;
+        &:hover {
+            color: @color_main;
+            border-bottom: 1px dashed #aaa;
+        }
+    }
+}
+
 .chart-item {
     clear: both;
     overflow: hidden;
@@ -101,6 +112,7 @@ a {
     }
     .object {
         float: left;
+        .link-stealth;
     }
     .title {
         font-size: 16px;
@@ -134,6 +146,7 @@ a {
     }
     .title {
         font-weight: bold;
+        .link-stealth;
     }
     .body {
         margin: 0;
@@ -170,6 +183,9 @@ a {
         .down {
             color: red;
         }
+    }
+    .name {
+        .link-stealth;
     }
     .bar {
         min-width: 300px;
