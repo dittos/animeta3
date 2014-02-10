@@ -351,6 +351,37 @@ body:after {
 body:after {
   clear: both;
 }
+.mixin-link-stealth a {
+  color: #000;
+  text-decoration: none;
+}
+.mixin-link-stealth a:hover {
+  color: #4bb000;
+  border-bottom: 1px dashed #aaa;
+}
+.mixin-bordered {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 #eee;
+  padding: 8px;
+}
+.btn-block {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 #eee;
+  padding: 8px;
+  display: block;
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #eee;
+  transition: 0.1s linear background-color;
+}
+.btn-block:hover {
+  background-color: #f8f8f8;
+}
 a {
   color: #4bb000;
 }
@@ -421,6 +452,9 @@ a {
 .page-home .popular-works .chart-item {
   margin-top: 16px;
 }
+.page-home .popular-works .detail {
+  margin-top: 16px;
+}
 .page-home .timeline {
   display: inline;
   float: left;
@@ -430,20 +464,15 @@ a {
 .page-home .timeline .timeline-post {
   margin-top: 16px;
 }
+.page-home .timeline .more {
+  margin-top: 16px;
+}
 .page-home .section-title {
   color: #999;
   letter-spacing: 6px;
   font-weight: normal;
   font-size: 15px;
   margin: 0;
-}
-.link-stealth a {
-  color: #000;
-  text-decoration: none;
-}
-.link-stealth a:hover {
-  color: #4bb000;
-  border-bottom: 1px dashed #aaa;
 }
 .chart-item {
   clear: both;
@@ -589,4 +618,30 @@ a {
 }
 .page-work .timeline-post {
   margin-top: 16px;
+}
+.page-timeline {
+  display: inline;
+  float: left;
+  width: 940px;
+  margin: 0 10px;
+}
+.page-timeline .timeline-post {
+  margin-top: 16px;
+}
+.page-timeline .paging {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 20px;
+}
+.page-timeline .paging a {
+  color: #999;
+  text-decoration: none;
+  padding: 5px;
+}
+.page-timeline .paging a:hover {
+  color: #4bb000;
+}
+.page-timeline .paging .active {
+  color: #4bb000;
+  font-weight: bold;
 }

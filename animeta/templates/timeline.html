@@ -1,0 +1,22 @@
+{% extends '_base.html' %}
+
+{% from '_macros.html' import render_post %}
+
+{% block content %}
+<div class="page-timeline">
+    <h2>최근 감상평</h2>
+    {% for post in paging.items %}
+        {{ render_post(post) }}
+    {% endfor %}
+
+    <div class="paging">
+    {% for page in paging.iter_pages() %}
+        {% if page %}
+            <a href="?page={{ page }}"{% if page == paging.page %} class="active"{% endif %}>{{ page }}</a>
+        {% else %}
+            ...
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

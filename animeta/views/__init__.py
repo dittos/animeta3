@@ -36,3 +36,11 @@ def init_app(app):
             work_chart=work_chart,
             timeline=apis.post.get_recent_posts(filter_noise=True).limit(6),
         )
+
+    @app.route('/timeline/')
+    def timeline():
+        page = flask.request.args.get('page', 1, type=int)
+        posts = apis.post.get_recent_posts()
+        return flask.render_template('timeline.html',
+            paging=posts.paginate(page, per_page=20),
+        )

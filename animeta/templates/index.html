@@ -18,6 +18,9 @@
             </div>
         </div>
         {% endfor %}
+        <div class="detail">
+            <a href="{{ url_for('chart.work', range='weekly') }}">자세히 보기</a>
+        </div>
     </div>
 
     <div class="timeline">
@@ -25,6 +28,8 @@
         {% for post in timeline %}
             {{ render_post(post) }}
         {% endfor %}
+
+        <a href="{{ url_for('timeline') }}" class="btn-block more">더 보기</a>
     </div>
 </div>
 {% endblock %}
