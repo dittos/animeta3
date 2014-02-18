@@ -5,8 +5,9 @@
   "author": "Taeho Kim",
   "license": "MIT",
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-less": "~0.8.3",
-    "grunt-contrib-watch": "~0.5.3"
+    "gulp-util": "~2.2.14",
+    "gulp": "~3.5.2",
+    "gulp-less": "~1.2.1",
+    "gulp-concat": "~2.1.7"
   }
 }
