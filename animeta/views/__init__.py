@@ -6,8 +6,8 @@ from animeta import db, models, apis
 def init_app(app):
     from animeta.views import chart, work, user
     app.register_blueprint(chart.bp, url_prefix='/charts')
-    app.register_blueprint(work.bp, url_prefix='/works')
     app.register_blueprint(user.bp, url_prefix='/users')
+    app.register_blueprint(work.bp, url_prefix='/works/<title>')
 
     # The trailing parenthesises make the filter name
     # same with the function name (`static`).

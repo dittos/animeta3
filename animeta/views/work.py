@@ -7,7 +7,7 @@ bp = flask.Blueprint('work', __name__)
 def work_url(work, endpoint='detail', **kwargs):
     return flask.url_for('work.' + endpoint, title=work.title, **kwargs)
 
-@bp.route('/<title>/')
+@bp.route('/')
 def detail(title):
     work = apis.work.get_work(title)
     return flask.render_template('work/detail.html',
@@ -16,7 +16,7 @@ def detail(title):
         episodes=apis.work.get_episodes(work),
     )
 
-@bp.route('/<title>/ep/<int:ep>/')
+@bp.route('/ep/<int:ep>/')
 def episode(title, ep):
     work = apis.work.get_work(title)
     return flask.render_template('work/episode.html',
