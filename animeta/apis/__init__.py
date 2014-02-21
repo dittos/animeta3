@@ -1,1 +1,1 @@
-from . import chart, post, work
+from . import chart, post, work, user, record

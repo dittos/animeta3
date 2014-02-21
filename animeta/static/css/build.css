@@ -651,3 +651,63 @@ a {
   color: #4bb000;
   font-weight: bold;
 }
+.page-user {
+  display: inline;
+  float: left;
+  width: 940px;
+  margin: 0 10px;
+  padding-top: 16px;
+}
+.page-user .username {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+.page-user .records {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+}
+.page-user .records .item {
+  padding: 3px 0;
+}
+.page-user .records .item a {
+  display: inline-block;
+  padding: 7px;
+  text-decoration: none;
+  color: #959595;
+  border-radius: 3px;
+}
+.page-user .records .item a:hover {
+  background: #999;
+  color: #fff;
+}
+.page-user .records .item .status {
+  margin-left: 0.5em;
+  font-weight: bold;
+}
+.page-user .records .item-watching .status {
+  color: #4bb000;
+}
+.page-user .records .item-watching a {
+  color: #000;
+  font-weight: bold;
+}
+.page-user .records .item-watching a:hover {
+  background-color: #4bb000;
+}
+.page-user .records .item-watching a:hover .status {
+  color: #fff;
+}
+.page-user .record-title a {
+  color: #000;
+  text-decoration: none;
+}
+.page-user .record-title a:hover {
+  color: #4bb000;
+  border-bottom: 1px dashed #aaa;
+}
+.page-user .record-history .timeline-post {
+  margin-top: 16px;
+}

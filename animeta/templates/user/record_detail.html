@@ -1,0 +1,13 @@
+{% extends 'user/_base.html' %}
+
+{% from '_macros.html' import render_history %}
+
+{% block user_content %}
+<h2 class="record-title"><a href="{{ record.work|work_url }}">{{ record.title }}</a></h2>
+
+<div class="record-history">
+{% for history in history_list %}
+    {{ render_history(history) }}
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'user/_base.html' %}
+
+{% block user_content %}
+<ul class="records">
+{% for record in records %}
+    <li class="item item-{{ record.status_type }}">
+        <a href="{{ record|record_url }}">
+            <span class="title">{{ record.title }}</span>
+            <span class="status">{{ record|format_status }}</span>
+        </a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

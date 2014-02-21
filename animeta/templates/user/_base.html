@@ -1,0 +1,10 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<div class="page-user">
+    <h1 class="username">{{ user.username }}</h1>
+
+    {% block user_content %}
+    {% endblock %}
+</div>
+{% endblock %}
